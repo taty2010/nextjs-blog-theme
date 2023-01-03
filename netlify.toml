@@ -2,5 +2,17 @@
   command = "npm run build"
   publish = ".next"
 
+  [build.environment]
+    CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+    TERM = "xterm"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cypress"
+  [plugins.inputs]
+      record = true
+      group = "Testing Built Site"
+  [plugins.inputs.postBuild]
+      enable = true 
