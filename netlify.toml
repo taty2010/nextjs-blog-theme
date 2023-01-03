@@ -14,3 +14,5 @@
   [plugins.inputs]
       record = true
       group = "Testing Built Site"
+  [plugins.inputs.preBuild]
+      enable = true 
